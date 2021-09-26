@@ -20,6 +20,7 @@ go mod init
 go install github.com/gin-gonic/gin@v1.7.4
 go install golang.org/x/tools/gopls@v0.7.2
 go install github.com/ramya-rao-a/go-outline@latest
+go install github.com/jstemmer/go-junit-report@v0.9.1
 ```
 
 This will create `go.mod` file. 
@@ -38,4 +39,12 @@ RUN apk update && apk add git
 COPY go.mod go.sum ./
 RUN go mod download
 EXPOSE 8080
+```
+
+### Local testing
+Run the following:
+
+```shell
+go test ./test -v 2>&1 | go-junit-report > repor
+t.xml
 ```
