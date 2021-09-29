@@ -16,11 +16,12 @@ EXPOSE 8080
 Open in container and run the following.
 
 ```shell
-go mod init
-go install github.com/gin-gonic/gin@v1.7.4
-go install golang.org/x/tools/gopls@v0.7.2
-go install github.com/ramya-rao-a/go-outline@latest
-go install github.com/jstemmer/go-junit-report@v0.9.1
+$ go mod init
+$ go install github.com/gin-gonic/gin@v1.7.4
+$ go install golang.org/x/tools/gopls@v0.7.2
+$ go install github.com/ramya-rao-a/go-outline@latest
+$ go install github.com/jstemmer/go-junit-report@v0.9.1
+$ go install golang.org/x/tools/cmd/godoc@v0.1.7
 ```
 
 This will create `go.mod` file. 
@@ -45,6 +46,17 @@ EXPOSE 8080
 Run the following:
 
 ```shell
-go test ./test -v 2>&1 | go-junit-report > repor
-t.xml
+$ go test ./test -v 2>&1 | go-junit-report > report.xml
+```
+
+### godoc
+Run the following:
+
+```shell
+$ go doc <package name>.<function name>
+# example
+$ go doc controllers.CalcCollatz
+package controllers // import "app/controllers"
+
+func CalcCollatz(n int64)
 ```
