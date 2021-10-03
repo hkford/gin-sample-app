@@ -7,7 +7,20 @@
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	"dockerFile": "../Dockerfile",
 	// Set *default* container specific settings.json values on container create.
-	"settings": {},
+	"settings": {
+		"editor.formatOnSave": false,
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1000,
+		"go.formatTool": "gofmt",
+		"go.formatFlags": [
+		  "-w"
+		],
+		"go.lintTool": "staticcheck",
+		"go.lintOnSave": "package",
+		"go.vetOnSave": "package",
+		"go.buildOnSave": "package",
+		"go.testOnSave": false,
+	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
         "golang.go"

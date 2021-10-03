@@ -22,6 +22,7 @@ $ go install golang.org/x/tools/gopls@v0.7.2
 $ go install github.com/ramya-rao-a/go-outline@latest
 $ go install github.com/jstemmer/go-junit-report@v0.9.1
 $ go install golang.org/x/tools/cmd/godoc@v0.1.7
+$ go install honnef.co/go/tools/cmd/staticcheck@2020.2.1
 ```
 
 This will create `go.mod` file. 
