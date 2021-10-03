@@ -6,7 +6,8 @@
 	"context": "..",
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	"dockerFile": "../Dockerfile",
-	// Set *default* container specific settings.json values on container create.
+	// Following this blog
+	// https://casualdevelopers.com/tech-tips/how-to-setup-vscode-with-golang/#i-3
 	"settings": {
 		"editor.formatOnSave": false,
 		"files.autoSave": "afterDelay",
@@ -23,8 +24,8 @@
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-        "golang.go"
-    ],
+		"golang.go"
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080
