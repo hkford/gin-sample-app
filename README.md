@@ -61,3 +61,9 @@ package controllers // import "app/controllers"
 
 func CalcCollatz(n int64)
 ```
+
+## About Gin
+### Build a single binary with templates
+You can build a single binary containing template files. See [this example](https://github.com/gin-gonic/examples/tree/master/assets-in-binary/example02).
+
+Note that go:embed cannot load files in parent directory.
