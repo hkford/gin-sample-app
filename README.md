@@ -66,4 +66,4 @@ func CalcCollatz(n int64)
 ### Build a single binary with templates
 You can build a single binary containing template files. See [this example](https://github.com/gin-gonic/examples/tree/master/assets-in-binary/example02).
 
-Note that go:embed cannot load files in parent directory.
+Note that go:embed cannot load files in parent directory. So template files are in the same directory of router.go.
