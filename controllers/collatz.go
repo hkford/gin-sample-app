@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"strconv"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,4 +30,14 @@ func CalcCollatz(n int64) []int64 {
 			return sequence
 		}
 	}
+}
+
+func GetCollatzSequence(n int64) string {
+	sequence := CalcCollatz(n)
+	sequence_display := strconv.FormatInt(sequence[0], 10)
+	for i := 1; i < len(sequence); i++ {
+		sequence_display += " -> "
+		sequence_display += strconv.FormatInt(sequence[i], 10)
+	}
+	return sequence_display
 }

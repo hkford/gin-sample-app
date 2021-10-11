@@ -41,3 +41,20 @@ func TestCalcCollatz(t *testing.T) {
 		t.Errorf("CalcNextStep failed. expect:%d, actual:%d", expected_result, result)
 	}
 }
+
+func TestGetCollatzSequence(t *testing.T) {
+	var result string
+	var expected_result string
+
+	result = controllers.GetCollatzSequence(3)
+	expected_result = "3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"
+	if !reflect.DeepEqual(result, expected_result) {
+		t.Errorf("CalcNextStep failed. expect:%s, actual:%s", expected_result, result)
+	}
+
+	result = controllers.GetCollatzSequence(9)
+	expected_result = "9 -> 28 -> 14 -> 7 -> 22 -> 11 -> 34 -> 17 -> 52 -> 26 -> 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"
+	if !reflect.DeepEqual(result, expected_result) {
+		t.Errorf("CalcNextStep failed. expect:%s, actual:%s", expected_result, result)
+	}
+}
