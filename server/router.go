@@ -19,7 +19,8 @@ func NewRouter() *gin.Engine {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.GET("/", controllers.IndexDisplayAction)
-	router.GET("/collatz", controllers.CollatzDisplayAction)
+	router.GET("/collatz", controllers.InitialCollatzAction)
+	router.POST("/calc_collatz", controllers.CollatzDisplayAction)
 	router.GET("/ishealthy", controllers.IshealthyDisplayAction)
 	return router
 }
