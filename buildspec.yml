@@ -1,0 +1,28 @@
+# YAML_FILE_ERROR Message: Runtime version selection is not supported in version 0.1, see documentation
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      golang: 1.16
+    commands:
+      - go version
+      - go mod download
+      - go get -u github.com/jstemmer/go-junit-report@v0.9.1
+  pre_build:
+    commands:
+      - go test ./test -v 2>&1 | go-junit-report > report.xml
+  build:
+    commands:
+      - go build -o app
+reports:
+  gin-app-report:
+    files:
+      - report.xml
+    file-format: JUNITXML
+artifacts:
+  files:
+    - app
+    - appspec.yml
+    - scripts/stop_server.sh
+    - scripts/start_server.sh
+    - scripts/validate_server.sh
