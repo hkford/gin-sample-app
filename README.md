@@ -62,8 +62,21 @@ package controllers // import "app/controllers"
 func CalcCollatz(n int64)
 ```
 
-## About Gin
-### Build a single binary with templates
-You can build a single binary containing template files. See [this example](https://github.com/gin-gonic/examples/tree/master/assets-in-binary/example02).
-
-Note that go:embed cannot load files in parent directory. So template files are in the same directory of router.go.
+### Folder structure
+```shell
+controllers
+    |- collatz.go # Define returning collatz.html
+    |- display_collatz.go # Calculate Collatz sequence and display it
+    |- healthy.go # Define healthcheck
+    |- index.go # Define returning index.html
+scripts # Scripts for AWS CodeDeploy hooks
+server
+    |- view # HTML template files
+    |- router.go # Define routing
+    |- server.go # Run router
+test # Test codes
+appspec.yml # AWS CodeDeploy appspec file
+buildspec.yml # AWS CodeBuild buildspec file
+go.mod # Go modules
+main.go
+```
