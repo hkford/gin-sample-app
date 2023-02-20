@@ -50,6 +50,13 @@ Run the following:
 $ go test ./test -v 2>&1 | go-junit-report > report.xml
 ```
 
+### Running server
+
+```shell
+$ go build -t gin-sample .
+$ docker run --name gin-app -it --rm  --publish 0.0.0.0:8080:8080 gin-sample
+```
+
 ### godoc
 Run the following:
 
